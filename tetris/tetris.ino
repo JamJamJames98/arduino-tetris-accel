@@ -1,4 +1,26 @@
+/*
+ * # MAX72xx LED Matrix Display Library
+
+The library implements functions that allow the MAX72xx to be used for LED matrices, 
+allowing the programmer to use the LED matrix as a pixel device,displaying graphics elements much like any other pixel addressable display.
+The library still retains flexibility for device level control, should the developer require, through the use of overloaded class methods.
+[Library Documentation](https://majicdesigns.github.io/MD_MAX72XX/)
+
+Copyright
+Copyright (C) 2012-18 Marco Colli. All rights reserved.
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License 
+as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License along with this library; 
+if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+*
+*/
 #include <MD_MAX72xx.h>
+
+
+//these are built in imports, no copyright/use terms needed
 #include <SPI.h>
 #include <Wire.h>
 
@@ -7,9 +29,11 @@
 #define DATA_PIN  ICSP-4
 #define CS_PIN    10
  
-MD_MAX72XX mx = MD_MAX72XX(CS_PIN, MAX_DEVICES);                      // SPI hardware interface
+MD_MAX72XX mx = MD_MAX72XX(CS_PIN, MAX_DEVICES); // SPI hardware interface
  
 //ACCELEROMETER CODE
+// code taken from
+//https://www.hackster.io/56491/using-the-pmod-acl-with-arduino-uno-35d564
 // Declaration of the adress of the module
 #define ADXL345_Adresse 0x53 // ADXL345 adress
 #define POWER_CTL 0x2D // Power Control register
@@ -68,6 +92,8 @@ void setup() {
   draw_end_line();
  
   //ACCELEROMETER SETUP
+  // code taken from
+  //https://www.hackster.io/56491/using-the-pmod-acl-with-arduino-uno-35d564
   Serial.begin(9600); // initialization of serial communication
   Wire.begin (); // initialization of I2C communication
   Wire.beginTransmission (ADXL345_Adresse); // configuration of the module
@@ -962,6 +988,8 @@ void display_score() {
 }
  
 String check_control() {
+  // code taken from
+  //https://www.hackster.io/56491/using-the-pmod-acl-with-arduino-uno-35d564
   Wire.beginTransmission(ADXL345_Adresse);
   Wire.write(DATAX0);
   Wire.endTransmission();
