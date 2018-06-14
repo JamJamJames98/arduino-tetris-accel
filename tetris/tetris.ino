@@ -20,8 +20,14 @@ if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor
 #include <MD_MAX72xx.h>
 
 
-//these are built in imports, no copyright/use terms needed
+/*
+ * these are built in imports, no copyright/use terms are needed
+ */
+ 
+//https://www.arduino.cc/en/Reference/SPI
 #include <SPI.h>
+
+//https://www.arduino.cc/en/reference/wire
 #include <Wire.h>
 
 #define MAX_DEVICES 4
