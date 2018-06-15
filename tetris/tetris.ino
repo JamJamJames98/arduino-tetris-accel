@@ -62,8 +62,8 @@ MD_MAX72XX mx = MD_MAX72XX(CS_PIN, MAX_DEVICES); // SPI hardware interface
 //ACCELEROMETER CODE
 // code taken from
 //https://www.hackster.io/56491/using-the-pmod-acl-with-arduino-uno-35d564
-// Declaration of the adress of the module
-#define ADXL345_Adresse 0x53 // ADXL345 adress
+// Declaration of the address of the module
+#define ADXL345_Adresse 0x53 // ADXL345 address
 #define POWER_CTL 0x2D // Power Control register
 #define DATA_FORMAT 0x31 // Data Format register
 #define DATAX0 0x32 // LSB axe X
@@ -94,7 +94,7 @@ struct node {
   struct orientation* shape; // current shape of the block
 };
 
-//orientation struct, allowes each node to rotate
+//orientation struct, allows each node to rotate
 struct orientation {
   int arr[10][10]; // this is the new shape->arr, this is the array to render so: curr->shape->arr[][] instead of shape->arr[][]
   int arr_height; // height of current shape
