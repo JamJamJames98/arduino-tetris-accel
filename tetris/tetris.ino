@@ -1,6 +1,6 @@
 
 //Copyright to use this implementation
-//Open Source Initiative Lisence
+//Open Source Initiative License
 /*
  *    Copyright 2018 James Giouroukelis
 
