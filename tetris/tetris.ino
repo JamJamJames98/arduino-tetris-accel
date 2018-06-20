@@ -783,7 +783,7 @@ void loop(void) {
       }
 
       //now redraw the block
-      int row_counter = 0;
+      row_counter = 0;
       for (int k = curr->height-1; k >= 0; k--) {
         for (int j = 0; j < curr->width; j++) {
           //if value in the shape array is '1'
