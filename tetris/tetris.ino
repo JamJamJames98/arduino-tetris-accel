@@ -813,7 +813,7 @@ void loop(void) {
       //(curr->shape->arr[curr->height-counter-1][j] == 1) -> the index of the block is filled
       //mx.getPoint(block_dropping_column + j, i-counter) -> the next pixel below it
       //i-counter > 7 -> ensuring the block is out of the spawn point
-      if ((curr->shape->arr[curr->height-counter-1][j] == 1) && mx.getPoint(block_dropping_column + j, i-counter) == true && i-counter > 7) {
+      if ((curr->shape->arr[curr->height-counter-1][j] == 1) && mx.getPoint(block_dropping_column + j, i+counter) == true && i+counter > 7) {
         hit = true;
         break;
       }
@@ -838,7 +838,7 @@ void loop(void) {
     for (int k = curr->height-1; k >= 0; k--) {
       for (int j = 0; j < curr->width; j++) {
         if (curr->shape->arr[k][j] == 1) {
-          if (i+row_counter > 7) {
+          if (i-row_counter > 7) {
             mx.setPoint(block_dropping_column + j, i-row_counter, true);
             if (control_direction == "LEFT" && able_move_left) {
               mx.setPoint(block_dropping_column + j+1, i-1-row_counter, false);
